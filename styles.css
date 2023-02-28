@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+}
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid red;
+
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: wrap;
+
+}
