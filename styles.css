@@ -34,7 +34,7 @@ h1 {
     align-items: center;
 }
 
-.gameboard {
+.game-board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     height: 50vh;
