@@ -3,6 +3,8 @@
 var boxInputs = document.getElementById("gameBoard");
 var whoseTurn = document.querySelector("h1");
 var errorMessage = document.getElementById("errorMessage")
+var otterWins = document.getElementById("otterWins");
+var orangutanWins = document.getElementById("orangutanWins")
 // Global Variables
 var game = new Game()
 // Event Listeners
@@ -52,6 +54,16 @@ function exploreAnotherOption() {
 }
 
 function oneWins() {
-    game.player1.increaseWins += 1;
+   var updatedScore = game.player1.increaseWins += 1;
+    otterWins.innerText = `${updatedScore} wins`
+    // game.player.playerWins();
+    game.resetGameBoard();
     
 }
+function twoWins() {
+    var updatedScore = game.player2.increaseWins += 1;
+     orangutanWins.innerText = `${updatedScore} wins`
+    //  game.player.playerWins();
+     game.resetGameBoard();
+     
+ }
