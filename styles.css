@@ -35,12 +35,37 @@ h1 {
     font-size: 60px;
 }
 
+.box-one,
+.box-four,
+.box-seven {
+    border-right: 2px solid red;
+}
+
+.box-one,
+.box-two,
+.box-three {
+    border-bottom: 2px solid red;
+}
+
+.box-three,
+.box-six,
+.box-nine {
+    border-left: 2px solid red;
+}
+
+.box-seven,
+.box-eight,
+.box-nine {
+    border-top: 2px solid red;
+}
+
 .game-board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     height: 50vh;
-    
-
+    width: 50vw;
+    /* border: 2px solid red; */
+    cursor: pointer;
 }
 
 .orangutan, 

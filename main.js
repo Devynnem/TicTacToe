@@ -17,7 +17,6 @@ boxInputs.addEventListener("click", checkForDuplicates)
 // game.checkForWinningRow();
 
 function loadNewGame() {
-    // whoseTurn += "";
     game.setPlayersTurn();
     updateToken()
 
@@ -25,10 +24,10 @@ function loadNewGame() {
 function updateToken() {
     if (game.currentPlayer === game.player1) {
     whoseTurn.innerHTML =
-    `It's 🦧 turn`
+    `It's 🦧 turn`;
     } else if (game.currentPlayer === game.player2) {
         whoseTurn.innerHTML =
-        `It's 🦦 turn`
+        `It's 🦦 turn`;
     }
 }
 function checkForDuplicates() {
@@ -41,18 +40,22 @@ function checkForDuplicates() {
   }
 
 function checkSelectedBox() {
-    event.target.innerHTML += game.currentPlayer.token;
     game.storeSelectedBoxes();
+    showTokensOnGrid()
     game.changePlayerTurn();  
     updateToken();
     game.checkForWinningRow();
-  
-    
+}
+function showTokensOnGrid() {
+    event.target.innerHTML += game.currentPlayer.token;
 }
 
 function exploreAnotherOption() {
     errorMessage.innerText = "That box has already been selected, try again!"
     !game.changePlayerTurn()
+}
+function clearBoard() {
+    
 }
 
 function oneWins() {
