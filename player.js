@@ -4,15 +4,14 @@
 // increaseWins - increases the count of the player’s wins
 
 class Player {
-    constructor(id, token, wins) {
+    constructor(id, token) {
         this.id = id;
         this.token = token;
-        this.wins = wins;
         this.player1Boxes = [];
         this.player2Boxes = [];
         this.increaseWins = 0;
     }
-    playerWins() {
-        this.increaseWins += 1;
-    }
+    // playerWins() {
+    //     this.increaseWins += 1;
+    // }
 }
