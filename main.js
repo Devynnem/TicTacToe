@@ -17,16 +17,17 @@ boxInputs.addEventListener("click", checkForDuplicates)
 // game.checkForWinningRow();
 
 function loadNewGame() {
+    // whoseTurn += "";
     game.setPlayersTurn();
     updateToken()
 
 }
 function updateToken() {
     if (game.currentPlayer === game.player1) {
-    whoseTurn.innerHTML +=
+    whoseTurn.innerHTML =
     `It's 🦧 turn`
-    } else {
-        whoseTurn.innerHTML +=
+    } else if (game.currentPlayer === game.player2) {
+        whoseTurn.innerHTML =
         `It's 🦦 turn`
     }
 }
@@ -43,6 +44,7 @@ function checkSelectedBox() {
     event.target.innerHTML += game.currentPlayer.token;
     game.storeSelectedBoxes();
     game.changePlayerTurn();  
+    updateToken();
     game.checkForWinningRow();
   
     
