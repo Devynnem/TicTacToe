@@ -5,6 +5,7 @@ var whoseTurn = document.querySelector("h1");
 var errorMessage = document.getElementById("errorMessage")
 var otterWins = document.getElementById("otterWins");
 var orangutanWins = document.getElementById("orangutanWins")
+var box = document.getElementsByClassName("box");
 // Global Variables
 var game = new Game()
 // Event Listeners
@@ -44,6 +45,7 @@ function checkSelectedBox() {
     showTokensOnGrid()
     game.changePlayerTurn();  
     updateToken();
+    game.checkForDraw();
     game.checkForWinningRow();
 }
 function showTokensOnGrid() {
@@ -55,13 +57,16 @@ function exploreAnotherOption() {
     !game.changePlayerTurn()
 }
 function clearBoard() {
-    
+    for (var i = 0; i < box.length; i ++) {
+        box[i].innerHTML = "";
+    }
 }
 
 function oneWins() {
    var updatedScore = game.player1.increaseWins += 1;
     otterWins.innerText = `${updatedScore} wins`
     // game.player.playerWins();
+    clearBoard();
     game.resetGameBoard();
     
 }
@@ -69,6 +74,7 @@ function twoWins() {
     var updatedScore = game.player2.increaseWins += 1;
      orangutanWins.innerText = `${updatedScore} wins`
     //  game.player.playerWins();
+    clearBoard();
      game.resetGameBoard();
      
  }

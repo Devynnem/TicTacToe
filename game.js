@@ -65,7 +65,11 @@ class Game {
         }
     }
     checkForDraw() {
-        
+        if (this.selectedBoxes.length === 9) {
+            errorMessage.innerText = "Looks like a draw. Let's try again!"
+            // setTimeout(game.resetGameBoard, 3000);
+        }
+
     }
  
     resetGameBoard () {
