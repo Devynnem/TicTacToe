@@ -34,7 +34,7 @@ nav {
 main {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
     background-image: linear-gradient( rgba(34, 11, 240, 0), rgb(20, 44, 167));
@@ -47,31 +47,32 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 60px;
+    font-size: 50px;
+    color:rgb(74, 86, 210)
 }
 
 .box-one,
 .box-four,
 .box-seven {
-    border-right: 4px solid rgb(83, 221, 51);
+    border-right: 4px solid rgb(239, 247, 4);
 }
 
 .box-one,
 .box-two,
 .box-three {
-    border-bottom: 4px solid rgb(83, 221, 51);
+    border-bottom: 4px solid rgb(239, 247, 4);
 }
 
 .box-three,
 .box-six,
 .box-nine {
-    border-left: 4px solid rgb(83, 221, 51);
+    border-left: 4px solid rgb(239, 247, 4);
 }
 
 .box-seven,
 .box-eight,
 .box-nine {
-    border-top: 4px solid rgb(83, 221, 51);
+    border-top: 4px solid rgb(239, 247, 4);
 }
 .box {
     display: flex;
@@ -83,6 +84,8 @@ h1 {
 .game-board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-auto-columns: auto;
     height: 450px;
     width: 450px;
     /* border: 2px solid red; */
@@ -93,5 +96,12 @@ h1 {
 .otter,
 h2 {
     font-size: 75px;
-    color:rgb(42, 252, 0);
+    color:rgb(218, 245, 12);
+}
+
+#errorMessage {
+    padding-top: 50px;
+    font-size: 30px;
+    display: flex;
+    align-items: flex-end;
 }
