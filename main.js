@@ -23,6 +23,7 @@ function loadNewGame() {
 
 }
 function updateTitleToken() {
+    whoseTurn.innerHTML = "Tic Tac Toe";
     if (game.currentPlayer === game.player1) {
     whoseTurn.innerHTML =
        `It's 🦦 turn`;
@@ -32,7 +33,7 @@ function updateTitleToken() {
     }
 }
 function checkForDuplicates() {
-    errorMessage.innerText = "";
+    // errorMessage.innerText = "";
     if (game.selectedBoxes.includes(event.target.id)) {
         exploreAnotherOption();
     } else {
@@ -63,6 +64,7 @@ function clearBoard() {
         boxInputs.addEventListener("click", checkForDuplicates);
         boxInputs.style.cursor = 'pointer';
         whoseTurn.innerHTML = "Tic Tac Toe"
+        errorMessage.innerText = "";
     }
 }
 
