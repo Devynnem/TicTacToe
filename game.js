@@ -64,13 +64,11 @@ class Game {
             }
         }
     }
-    checkForDraw() {
-        if (this.selectedBoxes.length === 9) {
-            errorMessage.innerText = "Looks like a draw. Let's try again!"
-            // setTimeout(game.resetGameBoard, 3000);
-        }
-
-    }
+    // checkForDraw() {
+    //     if (this.selectedBoxes.length === 9) {
+    //     errorMessage.innerText = "Looks like a draw. Let's try again!"
+    //     }
+    // }
  
     resetGameBoard () {
         this.player1.player1Boxes.length = 0;
