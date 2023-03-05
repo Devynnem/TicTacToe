@@ -6,23 +6,38 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    border: 1px solid red;
+    font-family: 'Atma';
+    /* border: 1px solid red; */
 }
 
 nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid red;
+    justify-content: center;
+    /* border: 1px solid red; */
     width: 33vw;
 
 }
 
+.otter-background {
+    background-image: url('https://www.worldatlas.com/r/w1200/upload/91/28/75/shutterstock-1046554378.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.orangutan-background {
+    background-image: url('https://www.travelandleisure.com/thmb/R2kb6GuJwF4wVJhRVevV-FqOVao=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/el-yunque-national-rainforest-tropical-puerto-rico-TROPICALPLANTS0617-d3ccb18a16064e42bdd626cdf7a8cb68.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
 main {
     display: flex;
     flex-wrap: wrap;
-
-    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient( rgba(34, 11, 240, 0), rgb(20, 44, 167));
 
    
 }
@@ -32,31 +47,32 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 60px;
+    font-size: 50px;
+    color:rgb(74, 86, 210)
 }
 
 .box-one,
 .box-four,
 .box-seven {
-    border-right: 2px solid red;
+    border-right: 4px solid rgb(239, 247, 4);
 }
 
 .box-one,
 .box-two,
 .box-three {
-    border-bottom: 2px solid red;
+    border-bottom: 4px solid rgb(239, 247, 4);
 }
 
 .box-three,
 .box-six,
 .box-nine {
-    border-left: 2px solid red;
+    border-left: 4px solid rgb(239, 247, 4);
 }
 
 .box-seven,
 .box-eight,
 .box-nine {
-    border-top: 2px solid red;
+    border-top: 4px solid rgb(239, 247, 4);
 }
 .box {
     display: flex;
@@ -68,6 +84,8 @@ h1 {
 .game-board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-auto-columns: auto;
     height: 450px;
     width: 450px;
     /* border: 2px solid red; */
@@ -77,5 +95,13 @@ h1 {
 .orangutan, 
 .otter,
 h2 {
-    font-size: 50px;
+    font-size: 75px;
+    color:rgb(218, 245, 12);
+}
+
+#errorMessage {
+    padding-top: 50px;
+    font-size: 30px;
+    display: flex;
+    align-items: flex-end;
 }

@@ -60,30 +60,40 @@ function exploreAnotherOption() {
 function clearBoard() {
     for (var i = 0; i < box.length; i ++) {
         box[i].innerHTML = "";
+        boxInputs.addEventListener("click", checkForDuplicates);
+        boxInputs.style.cursor = 'pointer';
+        whoseTurn.innerHTML = "Tic Tac Toe"
     }
 }
 
 function oneWins() {
    var updatedScore = game.player1.increaseWins += 1;
+    whoseTurn.innerHTML = "🦦 wins!"
     otterWins.innerText = `${updatedScore} wins`
-    clearBoard();
+    pageLoad();
     game.resetGameBoard();
 }
 
 function twoWins() {
     var updatedScore = game.player2.increaseWins += 1;
+     whoseTurn.innerHTML = "🦧 wins!"
      orangutanWins.innerText = `${updatedScore} wins`
-    clearBoard();
+     pageLoad();
      game.resetGameBoard();
      
  }
 
  function checkForDraw() {
     if (game.selectedBoxes.length === 9) {
-    errorMessage.innerText = "Looks like a draw. Let's try again!"
-    clearBoard();
+    whoseTurn.innerText = "Looks like a draw. Let's try again!"
+    pageLoad(); 
     game.resetGameBoard();
     }
 }
 
- // setTimeout(resetGameBoard, 3000);
+ function pageLoad() {
+    setTimeout(clearBoard, 3000);
+    errorMessage.innerText = "New game in 3..2..1..!";
+    boxInputs.removeEventListener("click", checkForDuplicates)
+    boxInputs.style.cursor = 'not-allowed';
+ }
