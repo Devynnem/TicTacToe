@@ -48,6 +48,8 @@ class Game {
         this.selectedBoxes.push(boxChoice);
         if (this.currentPlayer === this.player1) {
             this.player1.player1Boxes.push(boxChoice)
+            console.log(game.player1)
+            console.log(game.player2)
         } else if (this.currentPlayer === this.player2) {
             this.player2.player2Boxes.push(boxChoice)
         } 
@@ -58,9 +60,10 @@ class Game {
         for (var i = 0; i < this.winningRows.length; i ++) {
             if (game.player1.player1Boxes.includes(this.winningRows[i][0]) && game.player1.player1Boxes.includes(this.winningRows[i][1]) && game.player1.player1Boxes.includes(this.winningRows[i][2])) {
                 console.log(game.player1)
-                oneWins();
+                whoWins();
             } else if (game.player2.player2Boxes.includes(this.winningRows[i][0]) && game.player2.player2Boxes.includes(this.winningRows[i][1]) && game.player2.player2Boxes.includes(this.winningRows[i][2])) {
-                twoWins();
+                console.log(game.player2)
+                whoWins();
             }
         }
     }

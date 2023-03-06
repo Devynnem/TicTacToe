@@ -4,7 +4,7 @@ var boxInputs = document.getElementById("gameBoard");
 var whoseTurn = document.querySelector("h1");
 var errorMessage = document.getElementById("errorMessage")
 var otterWins = document.getElementById("otterWins");
-var orangutanWins = document.getElementById("orangutanWins")
+var orangutanWins = document.getElementById("orangutanWins");
 var box = document.getElementsByClassName("box");
 // Global Variables
 var game = new Game()
@@ -68,22 +68,19 @@ function clearBoard() {
     }
 }
 
-function oneWins() {
-   var updatedScore = game.player1.increaseWins += 1;
-    whoseTurn.innerHTML = "🦦 wins!"
-    otterWins.innerText = `${updatedScore} wins`
+function whoWins() {
+    !game.changePlayerTurn();
+    var updatedScore = game.currentPlayer.increaseWins += 1;
+    whoseTurn.innerHTML = `${game.currentPlayer.token} wins!`
+        if (game.currentPlayer === game.player1) {
+        otterWins.innerText = `${updatedScore} wins`
+        } else if (game.currentPlayer === game.player2) {
+            orangutanWins.innerText = `${updatedScore} wins`
+            };
     pageLoad();
     game.resetGameBoard();
+    game.changePlayerTurn();
 }
-
-function twoWins() {
-    var updatedScore = game.player2.increaseWins += 1;
-     whoseTurn.innerHTML = "🦧 wins!"
-     orangutanWins.innerText = `${updatedScore} wins`
-     pageLoad();
-     game.resetGameBoard();
-     
- }
 
  function checkForDraw() {
     if (game.selectedBoxes.length === 9) {
