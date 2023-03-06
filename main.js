@@ -33,7 +33,7 @@ function updateTitleToken() {
     }
 }
 function checkForDuplicates() {
-    // errorMessage.innerText = "";
+    errorMessage.innerText = "";
     if (game.selectedBoxes.includes(event.target.id)) {
         exploreAnotherOption();
     } else {
@@ -46,9 +46,9 @@ function checkSelectedBox() {
     showTokensOnGrid()
     game.changePlayerTurn();  
     updateTitleToken();
-    checkForDraw();
     game.checkForWinningRow();
-}
+    checkForDraw();
+   }
 
 function showTokensOnGrid() {
     event.target.innerHTML += game.currentPlayer.token;
