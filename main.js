@@ -63,7 +63,7 @@ function clearBoard() {
         box[i].innerHTML = "";
         boxInputs.addEventListener("click", checkForDuplicates);
         boxInputs.style.cursor = 'pointer';
-        whoseTurn.innerHTML = "Tic Tac Toe"
+        whoseTurn.innerHTML = `${game.currentPlayer.token} goes first!`
         errorMessage.innerText = "";
     }
 }
