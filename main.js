@@ -20,7 +20,6 @@ function loadNewGame() {
 };
 
 function updateTitleToken() {
-  whoseTurn.innerHTML = "Tic Tac Toe";
   if (game.currentPlayer === game.player1) {
   whoseTurn.innerHTML =
     `It's 🦦 turn`;
