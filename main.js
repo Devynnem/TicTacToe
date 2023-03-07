@@ -69,17 +69,20 @@ function clearBoard() {
 function whoWins() {
   !game.changePlayerTurn();
   game.currentPlayer.playerWins();
-  var updatedScore = game.currentPlayer.increaseWins;
-  console.log(updatedScore);
-  whoseTurn.innerHTML = `${game.currentPlayer.token} wins!`;
-    if (game.currentPlayer === game.player1) {
-    otterWins.innerText = `${updatedScore} wins`;
-    } else if (game.currentPlayer === game.player2) {
-      orangutanWins.innerText = `${updatedScore} wins`;
-    };
+  updateWinCountOnPage();
   pageLoad();
   game.resetGameBoard();
   game.changePlayerTurn();
+};
+
+function updateWinCountOnPage() {
+  var updatedScore = game.currentPlayer.increaseWins;
+    whoseTurn.innerHTML = `${game.currentPlayer.token} wins!`;
+      if (game.currentPlayer === game.player1) {
+      otterWins.innerText = `${updatedScore} wins`;
+      } else if (game.currentPlayer === game.player2) {
+        orangutanWins.innerText = `${updatedScore} wins`;
+      };
 };
 
 function checkForDraw() {
@@ -95,4 +98,4 @@ function pageLoad() {
   errorMessage.innerText = "New game in 3..2..1..!";
   boxInputs.removeEventListener("click", checkForDuplicates);
   boxInputs.style.cursor = 'not-allowed';
-}
+};
