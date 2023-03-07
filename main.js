@@ -68,7 +68,9 @@ function clearBoard() {
 
 function whoWins() {
   !game.changePlayerTurn();
-  var updatedScore = game.currentPlayer.increaseWins += 1;
+  game.currentPlayer.playerWins();
+  var updatedScore = game.currentPlayer.increaseWins;
+  console.log(updatedScore);
   whoseTurn.innerHTML = `${game.currentPlayer.token} wins!`;
     if (game.currentPlayer === game.player1) {
     otterWins.innerText = `${updatedScore} wins`;
