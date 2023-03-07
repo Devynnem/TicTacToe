@@ -1,3 +1,6 @@
+// Global Variables
+var game = new Game();
+
 // Query Selectors
 var boxInputs = document.getElementById("gameBoard");
 var whoseTurn = document.querySelector("h1");
@@ -5,9 +8,6 @@ var errorMessage = document.getElementById("errorMessage");
 var otterWins = document.getElementById("otterWins");
 var orangutanWins = document.getElementById("orangutanWins");
 var box = document.getElementsByClassName("box");
-
-// Global Variables
-var game = new Game();
 
 // Event Listeners
 window.addEventListener('load', loadNewGame);
