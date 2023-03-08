@@ -9,6 +9,7 @@ Two players are able to play the classic game of Tic Tac Toe through this fully 
 2. `cd` into the directory
 3. Run `open index.html`
 4. Play Tic Tac Toe!
+5. Or click this [link](https://devynnem.github.io/TicTacToe/)!
 
 
 ### Preview of App:
